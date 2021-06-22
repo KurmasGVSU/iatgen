@@ -81,16 +81,40 @@ Qualtrics.SurveyEngine.addOnload(function() {
 
 		for (_i = 0, _len = image_srcs.length; _i < _len; _i++) {
 			src = image_srcs[_i];
-			images.push(new Image);
+			// images.push(new Image); // (Original code)
+			images.push(new Audio);    // zk Mod for audio
 
 			images[images.length - 1].src = src;
 
+			/* Original code
 			images[images.length - 1].onerror = function() {
 				alert("Your web browser encountered an issue running this portion of the study. You will be skipped ahead. You may have to click through this message several times.");
 				if (document.getElementById('NextButton')) document.getElementById('NextButton').click();
 			};
+			*/
 
+			// zk Mod for audio
+			images[images.length -1].onerror = function(message, source, lineno, colno, error) {
+			    console.log("Error loading Sound");
+				console.log(src)
+				console.log(message)
+				console.log(source)
+				console.log(lineno)
+				console.log(colno)
+				console.log(error)
+				alert("Your web browser encountered an issue running this portion of the study. You will be skipped ahead. You may have to click through this message several times.");
+				if (document.getElementById('NextButton')) document.getElementById('NextButton').click();
+			}
+
+		    /* Original Code
 			images[images.length - 1].onload = function() {
+				loadedImages++;
+				if (loadedImages = images.length) return imagesLoaded();
+			};
+			*/
+			
+			// zk Mod for audio
+				images[images.length - 1].oncanplaythrough = function() {
 				loadedImages++;
 				if (loadedImages = images.length) return imagesLoaded();
 			};
@@ -147,12 +171,23 @@ Qualtrics.SurveyEngine.addOnload(function() {
 			// DECLARE START OF CURRENT STIMULUS
 			currentStimulus.start = new Date().getTime();
 
+			/* Original code
 			// FOR IMAGES, USE APPEND CHILD TO DISPLAY. IF NOT, ADD STIMULUS VALUE TO MESSAGE.
 			if (typeof currentStimulus.stimulus === 'object') {
  				return message.appendChild(currentStimulus.stimulus);
 			} else {
  				return message.innerHTML += addlines + currentStimulus.stimulus;
  			}
+		   */
+
+		   // zk for Audio:
+		   	if (typeof currentStimulus.stimulus === 'object') {
+				currentStimulus.stimulus.play();
+ 				message.innerHTML += addlines + 'Listen!'
+				 //return message.appendChild(currentStimulus.stimulus);
+			} else {
+ 				return message.innerHTML += addlines +  currentStimulus.stimulus;
+ 			} // end Audio code
 
 		} else {
 

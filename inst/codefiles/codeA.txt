@@ -86,6 +86,13 @@ Qualtrics.SurveyEngine.addOnload(function() {
 
 			images[images.length - 1].src = src;
 
+		     let re = new RegExp('IATsounds/(.*)_(s|z).wav');
+			 var matches = re.exec(src);
+			 //console.log("The matches: ");
+			 //console.log(matches);
+
+			images[images.length - 1].word = matches[1];
+
 			/* Original code
 			images[images.length - 1].onerror = function() {
 				alert("Your web browser encountered an issue running this portion of the study. You will be skipped ahead. You may have to click through this message several times.");
@@ -183,7 +190,8 @@ Qualtrics.SurveyEngine.addOnload(function() {
 		   // zk for Audio:
 		   	if (typeof currentStimulus.stimulus === 'object') {
 				currentStimulus.stimulus.play();
- 				message.innerHTML += addlines + 'Listen!'
+				let theWord = currentStimulus.stimulus.word;
+ 				message.innerHTML += addlines + theWord;
 				 //return message.appendChild(currentStimulus.stimulus);
 			} else {
  				return message.innerHTML += addlines +  currentStimulus.stimulus;

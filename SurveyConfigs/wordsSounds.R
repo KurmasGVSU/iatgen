@@ -16,16 +16,16 @@ print("thSounds:  ")
 print(thSounds)
 
 writeIATfull(IATname="sth_v3",
-             posname="'s' sound", 
-             negname="'th' sound",
-             Aname="Good", 
-             Bname="Bad",
-             catType="images",
-             posimgs = sSounds,
-             negimgs = thSounds,
-             tgtType="words",
-             Awords = c("Marvelous", "Superb", "Pleasure", "Beautiful", "Joyful", "Glorious", "Lovely", "Wonderful"),
-             Bwords = c("Tragic", "Horrible", "Agony", "Painful", "Terrible", "Awful", "Humiliate", "Nasty"),
+             posname="Good", 
+             negname="Bad",
+             Aname="'s' sound", 
+             Bname="'th' sound",
+             catType="words",
+             poswords = c("Marvelous", "Superb", "Pleasure", "Beautiful", "Joyful", "Glorious", "Lovely", "Wonderful"),
+             negwords = c("Tragic", "Horrible", "Agony", "Painful", "Terrible", "Awful", "Humiliate", "Nasty"),
+             tgtType="images",
+             Aimgs = sSounds,
+             Bimgs = thSounds,
              
              #advanced options with recommended IAT settings
              n=c(16, 16, 32, 32, 16, 32, 32),   # number of trials per block

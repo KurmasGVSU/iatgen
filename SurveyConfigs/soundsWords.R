@@ -15,7 +15,7 @@ print(sSounds)
 print("thSounds:  ")
 print(thSounds)
 
-writeIATfull(IATname="sth_v3",
+writeIATfull(IATname="sth_v4",
              posname="'s' sound", 
              negname="'th' sound",
              Aname="Good", 
@@ -28,7 +28,7 @@ writeIATfull(IATname="sth_v3",
              Bwords = c("Tragic", "Horrible", "Agony", "Painful", "Terrible", "Awful", "Humiliate", "Nasty"),
              
              #advanced options with recommended IAT settings
-             n=c(16, 16, 32, 32, 16, 32, 32),   # number of trials per block
+             n=c(16, 16, 32, 16, 32, 4, 4),   # number of trials per block
              qsf=TRUE,                          # outputs qualtrics file. If false, generates raw code
              note=TRUE,                         # include note reminding online particpnats of key assignments
              correct.error=TRUE,                # require particpnats to correct errors before proceeding

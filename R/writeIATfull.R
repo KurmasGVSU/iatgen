@@ -62,8 +62,8 @@ writeIATstim <- function(type, combined.type="alternating", n, posside, Aside, c
   # add content to finpos
   for (i in 2:(length.pos+1)){  #loops through row numbers containing stimuli=normal count + 1. Use i-1 to get normal count.
     finpos[i] <- gsub("INSERTSTIM", stim.pos[(i-1)], finpos[i])
-    if (posside == "right") {finpos[i] <- gsub("INSERTCOR", 73, finpos[i])}
-    if (posside == "left") {finpos[i] <- gsub("INSERTCOR", 69, finpos[i])}
+    if (posside == "right") {finpos[i] <- gsub("INSERTCOR", 73, finpos[i]); print("Looking for i")}
+    if (posside == "left") {finpos[i] <- gsub("INSERTCOR", 69, finpos[i]); print("Looking for e")}
     if (posside == "none") {finpos[i] <- gsub("INSERTCOR", "\"NA\"", finpos[i])}
     finpos[i] <- gsub("INSERTINDEX", i-1, finpos[i])
   }
@@ -312,6 +312,9 @@ writeIATjs <- function(type, combined.type="alternating", n, posside, Aside, cat
                        pause=250, errorpause=300, correct.error=F, note=F, norepeat=FALSE,
                        imgs, out) {
 
+print(cat("Posside in:  " , posside, " -- ", class(posside), " . "))
+print(cat("Aside in: " , Aside, " -- ", class(Aside), " . "))
+
   apath  <- system.file("codefiles", "codeA.txt", package="iatgen")
   codeA <- as.matrix(readLines(apath, warn=F))
 
@@ -330,9 +333,11 @@ writeIATjs <- function(type, combined.type="alternating", n, posside, Aside, cat
 
   bpath  <- system.file("codefiles", "codeB.txt", package="iatgen")
   codeB <- as.matrix(readLines(bpath, warn=F))
+  print("Calling codestim");
   codestim <- writeIATstim(type=type, combined.type=combined.type, n=n, catType=catType, catCol=catCol, nPos=nPos, nNeg=nNeg,
                            poswords=poswords, negwords=negwords, posside=posside, tgtType=tgtType,
                            tgtCol=tgtCol, nA=nA, nB=nB, Awords=Awords, Bwords=Bwords, Aside=Aside, norepeat=norepeat, write.me=FALSE)
+  print("Exited codestim");
   cpath  <- system.file("codefiles", "codeC.txt", package="iatgen")
   codeC <- as.matrix(readLines(cpath, warn=F))
   temp <- rbind(codeA, codeimage, codeB, codestim, codeC)
@@ -432,22 +437,22 @@ writeIATblocks <- function(startqid=1, combined.type="alternating", foldernum=1,
 
   #create matrices that show what goes where
   if(swap=="category"){
-    possides <- cbind(matrix(c("none", "right", "right", "right", "left", "left", "left")),
-                      matrix(c("none", "left", "left", "left", "right", "right", "right")))
+    possides <- cbind(matrix(c("none", "right", "right", "left", "right", "left", "left")),
+                      matrix(c("none", "left", "left", "right", "left", "right", "right")))
     colnames(possides) <- c("right","left") # name columns for the STARTING valence position
 
-    Asides <- cbind(matrix(c("right", "none", "right", "right", "none", "right", "right")),
-                    matrix(c("left", "none", "left", "left", "none", "left", "left")))
+    Asides <- cbind(matrix(c("right", "none", "right", "none", "none", "right", "right")),
+                    matrix(c("left", "none", "left", "none", "none", "left", "left")))
     colnames(Asides) <- c("right","left") # name columns for the STARTING valence position
   }
 
   if(swap=="target"){
-    possides <- cbind(matrix(c("none", "right", "right", "right", "none", "right", "right")),
-                      matrix(c("none", "left", "left", "left", "none", "left", "left")))
+    possides <- cbind(matrix(c("none", "right", "right", "left", "right", "right", "right")),
+                      matrix(c("none", "left", "left", "right", "left", "left", "left")))
     colnames(possides) <- c("right","left") # name columns for the STARTING valence position
 
-    Asides <- cbind(matrix(c("right", "none", "right", "right", "left", "left", "left")),
-                    matrix(c("left", "none", "left", "left", "right", "right", "right")))
+    Asides <- cbind(matrix(c("right", "none", "right", "none", "left", "left", "left")),
+                    matrix(c("left", "none", "left", "none", "right", "right", "right")))
     colnames(Asides) <- c("right","left") # name columns for the STARTING valence position
   }
 
@@ -499,6 +504,7 @@ writeIATblocks <- function(startqid=1, combined.type="alternating", foldernum=1,
   }
 
 
+  print(cat("About to writeIATjs using Astart = ", Astart, " and posstart = ", posstart))
   writeIATjs(type = "target",
              combined.type=combined.type,
              n=n[1],
@@ -574,41 +580,15 @@ writeIATblocks <- function(startqid=1, combined.type="alternating", foldernum=1,
              norepeat=norepeat,
              out = paste("Q",qids[3], " JavaScript_3.txt",sep=""))
 
-  writeIATjs(type = "combined",
+ writeIATjs(type = "category",
              combined.type=combined.type,
              n = n[4],
              tgtType = tgtType,
              tgtCol = tgtCol,
              catType = catType,
              catCol = catCol,
-             posside=possides[4,posstart],
+             posside = possides[4,posstart],
              Aside = Asides[4,Astart],
-             poswords = poswords,
-             negwords = negwords,
-             nPos = nPos,
-             nNeg = nNeg,
-             nA = nA,
-             nB = nA,
-             Awords = Awords,
-             Bwords = Bwords,
-             imgs=imgs,
-             pause=pause,
-             note=note,
-             errorpause=errorpause,
-             correct.error=correct.error,
-             norepeat=norepeat,
-             out = paste("Q",qids[4], " JavaScript_4.txt",sep=""))
-
-  #whatever swaps here--garget or category--is what block 5 type should be. Populates stimuli builder
-  writeIATjs(type = swap,
-             combined.type=combined.type,
-             n = n[5],
-             tgtType = tgtType,
-             tgtCol = tgtCol,
-             catType = catType,
-             catCol = catCol,
-             posside = possides[5,posstart],
-             Aside = Asides[5,Astart],
              poswords = poswords,
              negwords = negwords,
              nPos = nPos,
@@ -623,8 +603,36 @@ writeIATblocks <- function(startqid=1, combined.type="alternating", foldernum=1,
              errorpause=errorpause,
              correct.error=correct.error,
              norepeat=norepeat,
-             out = paste("Q",qids[5], " JavaScript_5.txt",sep=""))
+             out = paste("Q",qids[4], " JavaScript_4.txt",sep=""))
 
+
+  
+  #whatever swaps here--garget or category--is what block 5 type should be. Populates stimuli builder
+    writeIATjs(type = "combined",
+             combined.type=combined.type,
+             n = n[5],
+             tgtType = tgtType,
+             tgtCol = tgtCol,
+             catType = catType,
+             catCol = catCol,
+             posside=possides[5,posstart],
+             Aside = Asides[5,Astart],
+             poswords = poswords,
+             negwords = negwords,
+             nPos = nPos,
+             nNeg = nNeg,
+             nA = nA,
+             nB = nA,
+             Awords = Awords,
+             Bwords = Bwords,
+             imgs=imgs,
+             pause=pause,
+             note=note,
+             errorpause=errorpause,
+             correct.error=correct.error,
+             norepeat=norepeat,
+             out = paste("Q",qids[5], " JavaScript_5.txt",sep=""))
+  
   writeIATjs(type = "combined",
              combined.type=combined.type,
              n = n[6],

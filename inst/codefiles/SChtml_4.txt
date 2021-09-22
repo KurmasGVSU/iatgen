@@ -122,6 +122,7 @@ This should take less than 1 minute</p>
 <br>
 When you are ready, please press the [Space] bar to begin.
 <br>
+<b>SChtml part 4</b>
 <br>
 Part 4 of 4</p>
 </div>

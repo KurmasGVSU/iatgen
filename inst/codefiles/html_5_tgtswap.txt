@@ -95,11 +95,15 @@ h2.err {
 
 <div class="lableft">
 	<div style="color: tgtCol;">tgtA</div>
+	or
+	<div style="color: catCol;">NEG</div>
 </div>
 
 
 <div class="labright">
 	<div style="color: tgtCol;">tgtB</div>
+	or
+	<div style="color: catCol;">POS</div>
 </div>
 
 
@@ -114,13 +118,17 @@ This should take less than 1 minute</p>
 </div>
 
 <div class="instruct" id="instructions">
-<p>Notice the categories from before have switched sides. Please practice this new configuration now. Remember to try to go as <em>fast as you can</em> while making as few errors as possible. <!--errorins--> 
+<p>Now the four categories you saw separately will appear together. Remember, each word/image fits in only one of the four categories. <!-- colins -->
+<br>
+<b>This is html_5_tgtswap.txt</b>
+<br>
+Use the <span style="font-weight: bold">E</span> key for the two categories on the left and the <span style="font-weight: bold">I</span> key for the two categories on the right. Again, try to go as fast as possible without making mistakes. <!--errorins--> Practice this combination now. 
 <br>
 <br>
 When you are ready, please press the [Space] bar to begin.
 <br>
 <br>
-Part 5 of 7</p>
+Part 3 of 7</p>
 </div>
 <p class="note" id="note"></p>
 </div>

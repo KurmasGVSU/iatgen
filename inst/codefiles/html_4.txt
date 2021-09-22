@@ -94,16 +94,12 @@ h2.err {
 
 
 <div class="lableft">
-	<div style="color: tgtCol;">tgtB</div>
-	or
-	<div style="color: catCol;">NEG</div>
+	<div style="color: catCol;">POS</div>
 </div>
 
 
 <div class="labright">
-	<div style="color: tgtCol;">tgtA</div>
-	or
-	<div style="color: catCol;">POS</div>
+	<div style="color: catCol;">NEG</div>
 </div>
 
 
@@ -118,8 +114,9 @@ This should take less than 1 minute</p>
 </div>
 
 <div class="instruct" id="instructions">
-<p>Please continue the task as you were just doing it. Again, try to go as fast as possible without making mistakes. <!--colins--> <!--errorins-->
+<p>Now, the categories have changed, but the rules remain the same. Please try to go as <em>fast as you can</em> while making as few errors as possible. <!--errorins-->
 <br>
+<b>This is html_4.txt!!!</b>
 <br>
 When you are ready, please press the [Space] bar to begin.
 <br>

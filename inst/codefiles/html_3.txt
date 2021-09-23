@@ -122,7 +122,6 @@ This should take less than 1 minute</p>
 <br>
 <br>
 When the word you hear and/or see belongs to one of the categories on the left, press the <span style="font-weight: bold">E</span> key as fast as you can. When it belongs to one of the categories on the right, press the <span style="font-weight: bold">I</span> key as fast as you can. Again, try to go as fast as possible without making mistakes. <!--errorins--> If you make an error, a red <span style="font-weight: bold; color: red">X</span> will appear. Correct errors by hitting the other key.
-. 
 <br>
 <br>
 When you are ready, please press the [Space] bar to begin.

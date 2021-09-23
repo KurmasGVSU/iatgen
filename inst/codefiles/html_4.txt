@@ -114,9 +114,9 @@ This should take less than 1 minute</p>
 </div>
 
 <div class="instruct" id="instructions">
-<p>Now, the categories have changed, but the rules remain the same. Please try to go as <em>fast as you can</em> while making as few errors as possible. <!--errorins-->
+<p>Once again, you will be presented with the same two categories from Block 2 but, this time, the categories have switched sides. When the word/sound belongs to the category on the left, press the <span style="font-weight: bold">E</span> key as fast as you can. When it belongs to the category on the right, press the <span style="font-weight: bold">I</span> key as fast as you can. If you make an error, a red <span style="font-weight: bold; color: red">X</span> will appear. 
+<p>Please practice this new configuration now. Try to go as <em>fast as you can</em> while making as few errors as possible. Correct errors by hitting the other key. <!--errorins-->
 <br>
-<b>This is html_4.txt!!!</b>
 <br>
 When you are ready, please press the [Space] bar to begin.
 <br>

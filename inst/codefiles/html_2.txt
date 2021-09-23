@@ -114,7 +114,10 @@ This should take less than 1 minute</p>
 </div>
 
 <div class="instruct" id="instructions">
-<p>Now, the categories have changed, but the rules remain the same. Please try to go as <em>fast as you can</em> while making as few errors as possible. <!--errorins-->
+<p>Now, the categories have changed, but the rules remain the same. Categories are now “‘Th sound” and “S sound”. In Spanish, these sounds represent two different ways to pronounce “z” (e.g., “zapato”) and “c” (e.g., “cielo”). The “Th sound” is similar to the sound we make in English for “th” in words such as “thaw” whereas the “S sound” is similar to the sound we make in English words like “saw”.  Both of these pronunciations/sounds (“th” & “s”) are valid in Spanish for these letters but their production varies depending on the region. <!--errorins--> 
+This time, you will hear a Spanish word beginning with the sound “th” or “s” and you will also see the word written in the middle of the screen. When the sound you hear belongs to the category on the left, press the E key as fast as you can. When it belongs to the category on the right, press the I key as fast as you can. If you make an error, a red X will appear. Correct errors by hitting the other key.
+<br>
+Please try to go as <em>fast as you can</em> while making as few errors as possible. <!--errorins-->
 <br>
 <br>
 When you are ready, please press the [Space] bar to begin.

@@ -118,10 +118,10 @@ This should take less than 1 minute</p>
 </div>
 
 <div class="instruct" id="instructions">
-<p>Now the four categories you saw separately will appear together. Remember, each sound/word fits in only one of the four categories. <!-- colins -->
+<p>Now the four categories you saw separately will once again appear together but in a different combination. You will be presented with a random combination of both audios and written words. Remember, each audio/word fits in only one of the four categories. <!-- colins -->
 <br>
 <br>
-Use the <span style="font-weight: bold">E</span> key for the two categories on the left and the <span style="font-weight: bold">I</span> key for the two categories on the right. Again, try to go as fast as possible without making mistakes. <!--errorins--> Practice this combination now. 
+When the word you hear and/or see belongs to one of the categories on the left, press the <span style="font-weight: bold">E</span> key as fast as you can. When it belongs to one of the categories on the right, press the <span style="font-weight: bold">I</span> key as fast as you can. Again, try to go as fast as possible without making mistakes. <!--errorins--> If you make an error, a red <span style="font-weight: bold; color: red">X</span> will appear. Correct errors by hitting the other key.
 <br>
 <br>
 When you are ready, please press the [Space] bar to begin.

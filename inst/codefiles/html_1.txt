@@ -114,7 +114,7 @@ This should take less than 1 minute</p>
 </div>
 
 <div class="instruct" id="instructions">
-<p>Instructions: Place your left and right index fingers on the <span style="font-weight: strong">E</span> and <span style="font-weight: strong">I</span> keys. At the top of the screen are 2 categories. In the task, words and/or images appear in the middle of the screen. <br><br>When the word/image belongs to the category on the left, press the <span style="font-weight: bold">E</span> key as fast as you can. When it belongs to the category on the right, press the <span style="font-weight: bold">I</span> key as fast as you can. If you make an error, a red <span style="font-weight: bold; color: red">X</span> will appear. <!--errorins-->
+<p>Instructions: Place your left and right index fingers on the <span style="font-weight: strong">E</span> and <span style="font-weight: strong">I</span> keys. At the top of the screen are 2 categories. On this first screen, these categories are “Good” and “Bad”. In the task, words appear in the middle of the screen. <br><br>When the word belongs to the category on the left, press the <span style="font-weight: bold">E</span> key as fast as you can. When it belongs to the category on the right, press the <span style="font-weight: bold">I</span> key as fast as you can. If you make an error, a red <span style="font-weight: bold; color: red">X</span> will appear. This is a timed sorting task. GO AS FAST AS YOU CAN while making as few mistakes as possible. Going too slow or making too many errors will result in an uninterpretable score. <!--errorins-->
 <br>
 <br>
 Please try to go as <em>fast as you can</em> while making as few errors as possible.

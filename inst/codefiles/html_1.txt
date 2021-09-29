@@ -103,7 +103,7 @@ h2.err {
 </div>
 
 
-
+<h2 class="err" id="error"></h2>
 
 <div class="load">
 <p id="loading">Loading all the content...

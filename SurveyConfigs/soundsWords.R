@@ -1,5 +1,5 @@
 library(purrr)
-devtools::install("/Users/kurmasz/Documents/LocalResearch/IAT/MyFork/iatgen")
+devtools::install("/Users/fernacar/Desktop/iatgen")
 library(iatgen)
 # devtools::load_all(iatgen)
 
@@ -15,7 +15,7 @@ print(sSounds)
 print("thSounds:  ")
 print(thSounds)
 
-writeIATfull(IATname="sth_v4",
+writeIATfull(IATname="sth_vFinal",
              posname="'s' sound", 
              negname="'th' sound",
              Aname="Good", 

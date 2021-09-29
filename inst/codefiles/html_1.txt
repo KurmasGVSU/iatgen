@@ -103,7 +103,6 @@ h2.err {
 </div>
 
 
-<h2 class="center" id="message"><br><br><br>+</h2>
 <h2 class="err" id="error"></h2>
 
 <div class="load">
